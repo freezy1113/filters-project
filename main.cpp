@@ -23,7 +23,7 @@ int main(){
     cout << "4- flip iamge" << endl ;
     cout << "5- darken and lighten image " << endl ;
     int choice ;
-     cin >> choice ;
+    cin >> choice ;
     switch (choice){
 
         case 1 :
