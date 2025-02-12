@@ -245,6 +245,7 @@ void filterDarkenandLightenImage(){
                     image[i][j] = image[i][j] / 2 ;
                 }
             }
+            break;
         case 2 :
             for(int i = 0 ; i < SIZE ; i++){
                 for(int j = 0 ; j < SIZE ; j++){
@@ -256,12 +257,14 @@ void filterDarkenandLightenImage(){
                     }
                 }
             }
+            break;
     }
 
 }
 
 void filterdetectimage(){
     unsigned char detectimage[SIZE][SIZE] ;
+    filterblackandwhite();
     for(int i = 0 ; i < SIZE ; i++){
         for(int j = 0 ; j < SIZE ; j++){
             detectimage[i][j] = 255 ;
