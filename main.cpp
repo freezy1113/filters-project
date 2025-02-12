@@ -317,7 +317,7 @@ void filterEnlargeImage(){
 
         default:
             cout << "Invalid quarter" << endl;
-            return;
+            break;
     }
 
     for (int i = 0; i < SIZE; i++) {
