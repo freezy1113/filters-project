@@ -19,6 +19,7 @@ void filterflipimage();
 void filterDarkenandLightenImage();
 void filterdetectimage();
 void filterEnlargeImage();
+void filterblurimage();
 
 int main(){ 
     cout << "ahlan ya user ya habibi :)" << endl ;
@@ -32,6 +33,7 @@ int main(){
     cout << "6- darken and lighten image " << endl ;
     cout << "7- detect image edges " << endl ;
     cout << "8- enlarge image " << endl ;
+    cout << "9- blur image " << endl ;
     cout << "exit >> 0 " ;
     int choice ;
     cin >> choice ;
@@ -67,6 +69,10 @@ int main(){
 
         case 8 : 
             filterEnlargeImage() ;
+            break;
+
+        case 9 :
+            filterblurimage() ;
             break;
     } 
     saveImage() ;
@@ -329,6 +335,14 @@ void filterEnlargeImage(){
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             image[i][j] = enlargedImage[i][j];
+        }
+    }
+}
+
+void filterblurimage(){
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            image[i][j] = ( image [i][j] + image[i-1][j-1] + image[i-1][j] + image[i][j] + image[i-1][j+1] + image[i][j-1] + image[i+1][j-1] + image[i+1][j] + image[i][j+1] + image[i+1][j+1]) / 9 ;
         }
     }
 }
